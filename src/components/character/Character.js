@@ -1,32 +1,23 @@
 import { useEffect, useState } from "react"
 import ListCharacters from "../listCharacteres/ListCharacters"
+import useFetch from "../../hooks/useFetch"
 import './character.css'
+
+
+const URL = `https://rickandmortyapi.com/api/character`
 
 const Character = () => {
 
-    const [characters, setCharacters] = useState([])
-
-    useEffect(() => {
-        getCharacters()
-         .then(character => setCharacters(character.results))
-    },[])
-
-    const getCharacters = async()=>{
-        const res = await fetch('https://rickandmortyapi.com/api/character')
-        const data = res.json()
-        return data
-        
-    }
-
+    const {characters } = useFetch(URL)
+    console.log(characters.results)
 
     return (
         <div className="container">
             {
-                characters.length ?
-                    characters.map((character)=>{
-                        console.log(character)
+                characters.results ?
+                    characters.results.map((character)=>{
                         return (
-                            <ListCharacters key={character.id} name={character.name} img={character.image} />
+                            <ListCharacters key={character.id} name={character.name} img={character.image} id={character.id}/>
                         )
                     })
                 : <h2>loading....</h2>
