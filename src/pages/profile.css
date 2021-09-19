@@ -1,7 +1,9 @@
 .container__profile {
-    margin-top: 5rem;
+    background: #3C3E44;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align:left;
+    width: 40rem;
+    margin: auto 5rem;
 }

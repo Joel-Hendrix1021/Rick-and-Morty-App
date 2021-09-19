@@ -4,13 +4,12 @@ import "./listCharacters.css";
 
 const listCharacters = ({ name, img, id }) => {
   return (
-
-    <Link to={`/profile/${id}`} >
-      <div className="container__img">
+    <div className="container__img">
+      <Link to={`/profile/${id}`}>
         <img className="img" src={img} alt={name} />
         <p>{name}</p>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

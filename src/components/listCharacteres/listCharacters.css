@@ -1,11 +1,22 @@
 .container__img {
+    display: flex;
+    flex-direction: column;
     border: 1px solid rgb(241, 221, 221);
-    width: 25rem;
+    width: 20rem;
+    height: 25rem;
     text-align: center;
     color: white;
-    display: inline-block;
+    justify-content: space-between;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .img {
-   width: 20rem;
+   width: 100%;
+}
+
+
+.container__img p {
+    padding:1rem;
+    font-size:1.7rem;
 }
