@@ -1,9 +1,33 @@
 .container__profile {
     background: #3C3E44;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align:left;
-    width: 40rem;
-    margin: auto 5rem;
+    width: 60rem;
+    margin: auto;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    overflow: hidden;
 }
+
+.profile__description {
+    text-align: left; 
+}
+.profile__name,
+.profile__location, 
+.profile__firstSee {
+    font-weight: bold;
+    color: #ede8e8;
+}
+.profile__status {
+    display: flex;
+   
+}
+.profile__description p {
+    padding: 0.5rem ;
+    font-size:1.7rem;
+}
+
+
+
