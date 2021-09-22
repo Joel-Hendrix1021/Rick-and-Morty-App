@@ -2,14 +2,21 @@ import { Link } from "react-router-dom";
 
 import "./listCharacters.css";
 
-const listCharacters = ({ name, img, id }) => {
+const listCharacters = ({ characters }) => {
+  
   return (
-    <div className="container__img">
-      <Link to={`/profile/${id}`}>
-        <img className="img" src={img} alt={name} />
-        <p>{name}</p>
-      </Link>
-    </div>
+    <>
+      {characters.map((character) => {     
+        return (
+          <div className="container__img" key={character.id}>
+            <Link to={`/profile/${character.id}`}>
+              <img className="img" src={character.image} alt={character.image} />
+              <p>{character.name}</p>
+            </Link>
+          </div>
+        )
+      })}
+    </>
   );
 };
 

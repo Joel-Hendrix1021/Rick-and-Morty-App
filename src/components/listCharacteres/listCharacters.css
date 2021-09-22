@@ -1,7 +1,7 @@
 .container__img {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(241, 221, 221);
+    border: 1px solid #3a3b3f;
     width: 20rem;
     height: 25rem;
     text-align: center;
@@ -9,12 +9,12 @@
     justify-content: space-between;
     border-radius: 1rem;
     overflow: hidden;
+    margin: auto;
 }
 
 .img {
    width: 100%;
 }
-
 
 .container__img p {
     padding:1rem;
