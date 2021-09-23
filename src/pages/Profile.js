@@ -2,15 +2,16 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { URL } from "../service";
 import "./profile.css";
+// https://rickandmortyapi.com/api/character/?name=rick
 
 const Profile = () => {
+   
   const { id } = useParams();
+ 
   const { characters } = useFetch(`${URL}/${id}`);
 
-  const episode = useFetch(characters.episode);
-  console.log(characters);
   return (
-    <div className="container__profile">
+    <div className="container__profile" key={id}>
       <img src={characters.image} alt="" />
       <div className="profile__description">
         <p className="profile__name">{characters.name}</p>     
@@ -22,9 +23,6 @@ const Profile = () => {
           </div>
         <p className="profile__location">Last known location:</p>
         {characters.location && <p>{characters.location.name}</p>}
-        <p className="profile__firstSee">First see in:</p>
-        {episode.characters && <p>{episode.characters.name}</p>}
-       
       </div>
     </div>
   );

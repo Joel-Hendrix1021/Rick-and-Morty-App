@@ -3,7 +3,7 @@
     flex-direction: column;
     border: 1px solid #3a3b3f;
     width: 20rem;
-    height: 25rem;
+    height: 27rem;
     text-align: center;
     color: white;
     justify-content: space-between;
@@ -18,5 +18,21 @@
 
 .container__img p {
     padding:1rem;
-    font-size:1.7rem;
+    font-size:1.5rem;
+}
+.container__img div {
+    display: flex;
+    flex-direction:row-reverse;
+    margin: auto;
+}
+
+.btn__fav {
+    background: none;
+    border: none;
+    width: 2rem;
+    margin: 0 2rem;
+    cursor: pointer;
+}
+.btn__fav img {
+    width: 100%;
 }

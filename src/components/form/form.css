@@ -1,0 +1,30 @@
+.form {
+    width: 40rem;
+    background: white;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    border-radius:2rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.form input {
+    width: 30rem;
+    padding: 0 2rem;
+    outline: none;
+    border: none;
+}
+
+.form button {
+    background:#68C611;
+    border: none;
+    width:4rem;
+    cursor: pointer;
+}
+
+.form button  img {
+    width: 50%;
+    margin-top: 0.4rem;
+}

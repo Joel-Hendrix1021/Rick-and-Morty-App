@@ -6,14 +6,14 @@ import useObserver from "../../hooks/useObserver";
 import { useEffect, useRef, useState } from "react";
 
 const URL = `https://rickandmortyapi.com/api/character?page=`;
-let arrayCaracters = []
+
 const Character = () => {
   const [page, setPage] = useState(1);
   const refElement = useRef();
   const { characters, isLoading, setCharacters} = useFetch(`${URL}${page}`);
   const { show } = useObserver(refElement);
   const [charactersResult, setCharactersResult] = useState([])
- 
+  let arrayCaracters = []
 
   useEffect(() => {
     if (show) {
@@ -23,10 +23,10 @@ const Character = () => {
 
   useEffect(() => {
     if(characters.results){
-     characters.results.map(item=> {
+     characters.results.map(item => {
         arrayCaracters.push(item)
      })
-      setCharactersResult(arrayCaracters)
+      setCharactersResult([...charactersResult, ...arrayCaracters])
     }
     
   }, [characters])

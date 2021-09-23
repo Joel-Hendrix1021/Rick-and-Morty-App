@@ -1,10 +1,11 @@
 import FormCharacter from "../form/FormCharacter"
+import './header.css'
 
-const Header = () => {
+const Header = ({handleSearches}) => {
     return (
-        <header>
-            <h1>Rick and Morty App</h1>
-            <FormCharacter/>
+        <header className="header">
+            <h1 >Rick and Morty App</h1>
+            <FormCharacter handleSearches={handleSearches} />
         </header>
     )
 }

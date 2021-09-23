@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 
 const useFetch = (url) => {
-
-    console.log(url)
     const [characters, setCharacters] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     
