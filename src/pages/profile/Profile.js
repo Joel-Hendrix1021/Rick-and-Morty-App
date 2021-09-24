@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
-import { URL } from "../service";
+import useFetch from "../../hooks/useFetch";
+import { URL } from "../../service";
 import "./profile.css";
 // https://rickandmortyapi.com/api/character/?name=rick
 

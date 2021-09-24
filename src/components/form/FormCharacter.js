@@ -16,7 +16,7 @@ const FormCharacter = ({handleSearches}) => {
     return (
         <form className="form" onSubmit={handleSubmit}>
             <input name="name" type="text"onChange={(e)=>setFormData(e.target.value)}  type="text" />
-            <button  ><img src="/assets/loupe.svg" alt="" /></button>
+            <button><img src="/assets/loupe.svg" alt="" /></button>
         </form>
     )
 }

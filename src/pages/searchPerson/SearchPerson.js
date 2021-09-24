@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
-import ListCharacters from "../components/listCharacteres/ListCharacters";
-import useFetch from "../hooks/useFetch";
+import ListCharacters from "../../components/listCharacteres/ListCharacters";
+import useFetch from "../../hooks/useFetch";
 
 const URL = `https://rickandmortyapi.com/api/character/?name=`;
 const SearchPerson = () => {

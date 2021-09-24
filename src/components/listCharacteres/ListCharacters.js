@@ -4,13 +4,19 @@ import { Link } from "react-router-dom";
 import "./listCharacters.css";
 
 const ListCharacters = ({ characters }) => {
-
-  const [likes, setLikes]  = useState([])
+   const getLocal = window.localStorage.getItem('likes')
+  
+   const [likes, setLikes]  = useState(getLocal? getLocal.split(',').map(item=> Number(item)): []);
 
   const handleFavorite=(id)=>{
-   setLikes(like=> [...like, id])
+    if(likes.includes(id)){
+      setLikes(likes => likes.filter(x => x!== id))
+    }else{
+      setLikes(like=> [...like, id])
+    }
+    
   }
-
+  window.localStorage.setItem('likes', likes)
   return (
     <>
       {characters.map((character) => {
@@ -27,7 +33,7 @@ const ListCharacters = ({ characters }) => {
               <p>{character.name}</p>
               <button onClick={()=> handleFavorite(character.id)} className="btn__fav">
                   {
-                    likes.includes(character.id)?  <img src="/assets/favorito (1).svg" alt="favorto.svg" />:  <img src="/assets/favorito.svg" alt="favorto.svg" />
+                    likes.includes(character.id) ?  <img src="/assets/favorito (1).svg" alt="favorto.svg" />:  <img src="/assets/favorito.svg" alt="favorto.svg" />
                   }
               </button>
             </div>
