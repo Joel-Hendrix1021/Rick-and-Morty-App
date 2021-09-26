@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 
 const URL = `https://rickandmortyapi.com/api/character?page=`;
 
-const Character = () => {
+const Character = ({handleFavs, likes }) => {
   const [page, setPage] = useState(1);
   const refElement = useRef();
   const { characters, isLoading, setCharacters} = useFetch(`${URL}${page}`);
@@ -35,9 +35,12 @@ const Character = () => {
 
   return (
     <>
+       
       <div className="container">
-        {charactersResult.length > 0 && <ListCharacters  characters={charactersResult} />}
-        
+        {charactersResult.length > 0 ?
+        <ListCharacters likes={likes}  characters={charactersResult} handleFavs={handleFavs}/>
+        : <h2>cargando...</h2>
+        } 
       </div>
       {
         show? <Loading />: null

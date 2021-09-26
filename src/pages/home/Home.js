@@ -2,10 +2,10 @@
 import Character from "../../components/character/Character";
 import Footer from "../../components/footer/Footer";
 
-const Home = () => {
+const Home = ({handleFavs, likes}) => {
   return (
     <>
-      <Character />
+      <Character handleFavs={handleFavs} likes={likes}/>
     </>
   );
 };
