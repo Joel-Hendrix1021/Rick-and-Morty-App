@@ -1,10 +1,10 @@
 
 import Character from "../../components/character/Character";
 
-const Home = ({ handleFavs, likes }) => {
+const Home = () => {
   return (
     <>
-      <Character handleFavs={handleFavs} likes={likes}/>
+      <Character />
     </>
   );
 };

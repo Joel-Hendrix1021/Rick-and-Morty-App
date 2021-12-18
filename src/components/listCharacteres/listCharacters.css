@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #3a3b3f;
-    width: 20rem;
+    width: 21rem;
     height: 27rem;
     text-align: center;
     color: white;
@@ -18,7 +18,7 @@
 
 .container__img p {
     padding:1rem;
-    font-size:1.5rem;
+    font-size:1.2rem;
 }
 .container__img div {
     display: flex;

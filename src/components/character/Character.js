@@ -6,40 +6,45 @@ import "./character.css";
 import Loading from "../loadingSpiner/Loading";
 import useObserver from "../../hooks/useObserver";
 import { useEffect, useRef, useState } from "react";
+import useNearScreen from "../../hooks/useNearScreen";
 
 const URL = "https://rickandmortyapi.com/api/character?page=";
 
 const Character = ({ handleFavs, likes }) => {
   const [page, setPage] = useState(1);
-  const refElement = useRef();
-  const { characters, isLoading, setCharacters } = useFetch(`${URL}${page}`);
-  const { show } = useObserver(refElement);
+  const element = useRef(null);
+  const { characters, isLoading } = useFetch(`${URL}${page}`);
+  const { entries } = useNearScreen(element);
   const [charactersResult, setCharactersResult] = useState([]);
-  const arrayCaracters = [];
+  const auxArr = [];
 
   useEffect(() => {
-    if (show) {
+    if (entries.isIntersecting) {
       setPage(page + 1);
     }
-  }, [show]);
+  }, [entries.isIntersecting]);
 
   useEffect(() => {
     if (characters.results) {
       characters.results.map(item => {
-        arrayCaracters.push(item);
+        auxArr.push(item);
       });
-      setCharactersResult([...charactersResult, ...arrayCaracters]);
+      setCharactersResult([...charactersResult, ...auxArr]);
     }
   }, [characters]);
 
   return (
     <>
       <div className="container">
-        {charactersResult.length > 0 &&
-        <ListCharacters likes={likes} characters={charactersResult} handleFavs={handleFavs}/>}
+        {isLoading
+          ? <Loading />
+          : <ListCharacters likes={likes} characters={charactersResult} handleFavs={handleFavs}/>
+          }
       </div>
-      {show ? <Loading /> : null}
-      <div id="visor" ref={refElement}></div>
+     {
+       isLoading && <Loading />
+     }
+    <div ref={element}></div>
     </>
   );
 };

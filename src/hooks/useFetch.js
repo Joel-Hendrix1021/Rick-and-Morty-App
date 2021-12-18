@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
   const [characters, setCharacters] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
     getCharacters()

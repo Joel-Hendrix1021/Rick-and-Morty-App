@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import useFavorite from "../../hooks/useFavorite";
 
-const CharacterSingle = ({ character }) => {
+const CardCharacter = ({ character }) => {
   const { likes, handleFavs } = useFavorite();
 
   return (
@@ -20,17 +20,17 @@ const CharacterSingle = ({ character }) => {
           onClick={() => handleFavs(character.id)}
           className="btn__fav"
         >
-          {/* {likes.includes(character.id)
+          {likes.includes(character.id)
             ? (
-            <img src="/assets/favoritoWhite.svg" alt="favorto.svg" />
+            <img src="/assets/favWhite.svg" alt="favorto.svg" />
               )
             : (
-            <img src="/assets/favorito.svg" alt="favorto.svg" />
-              )} */}
+            <img src="/assets/fav.svg" alt="favorto.svg" />
+              )}
         </button>
       </div>
     </div>
   );
 };
 
-export default CharacterSingle;
+export default CardCharacter;

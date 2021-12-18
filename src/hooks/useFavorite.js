@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const useFavorite = () => {
   const getLocal = window.localStorage.getItem("likes");
-  console.log(getLocal);
 
   const [likes, setLikes] = useState(getLocal ? getLocal.split(",").map((item) => Number(item)) : []);
 
