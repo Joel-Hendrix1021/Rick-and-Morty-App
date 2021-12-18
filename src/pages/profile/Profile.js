@@ -5,16 +5,15 @@ import "./profile.css";
 // https://rickandmortyapi.com/api/character/?name=rick
 
 const Profile = () => {
-   
   const { id } = useParams();
- 
+
   const { characters } = useFetch(`${URL}/${id}`);
 
   return (
     <div className="container__profile" key={id}>
       <img src={characters.image} alt="" />
       <div className="profile__description">
-        <p className="profile__name">{characters.name}</p>     
+        <p className="profile__name">{characters.name}</p>
         <p>{characters.gender}</p>
         <div className="profile__status">
           <p>{characters.species}</p>

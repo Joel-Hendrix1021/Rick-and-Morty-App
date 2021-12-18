@@ -6,10 +6,9 @@ const Header = ({ handleSearches }) => {
   return (
     <header className="header">
       <Link to={"/"} className="header__title">Rick and Morty App </Link>
-    
-      <FormCharacter handleSearches={handleSearches} />
+      <FormCharacter />
       <Link className="header__fav" to={"/favs"}>
-        Favorite <img src="/assets/favorito (1).svg" alt="favorito" />
+        Favorite <img src="/assets/favoritoWhite.svg" alt="favorito" />
       </Link>
     </header>
   );

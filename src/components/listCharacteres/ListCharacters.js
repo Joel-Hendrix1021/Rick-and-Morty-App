@@ -1,46 +1,16 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import useFavorite from "../../hooks/useFavorite";
+// import CharacterSingle from "../singelCharacter/CharacterSingle";
 
 import "./listCharacters.css";
 
-const ListCharacters = ({ characters, handleFavs, likes }) => {
-  const handleFavorite = (id) => {
-    handleFavs(id);
-  };
-
-  const CharacterSingle = ({character}) => {
-    
-    return (
-      <div className="container__img" key={character.id}>
-      <Link to={`/profile/${character.id}`}>
-        <img
-          className="img"
-          src={character.image}
-          alt={character.image}
-        />
-      </Link>
-      <div>
-        <p>{character.name}</p>
-        <button
-          onClick={() => handleFavorite(character.id)}
-          className="btn__fav"
-        >
-          {likes.includes(character.id) ? (
-            <img src="/assets/favorito (1).svg" alt="favorto.svg" />
-          ) : (
-            <img src="/assets/favorito.svg" alt="favorto.svg" />
-          )}
-        </button>
-      </div>
-    </div>
-    );
-  };
-
+const ListCharacters = ({ characters }) => {
+  const { likes, handleFavs } = useFavorite();
   return (
     <>
-      { characters.length > 1?
+      { characters.length > 1 &&
         characters.map((character) => {
-        return (
+          return (
           <div className="container__img" key={character.id}>
             <Link to={`/profile/${character.id}`}>
               <img
@@ -52,19 +22,22 @@ const ListCharacters = ({ characters, handleFavs, likes }) => {
             <div>
               <p>{character.name}</p>
               <button
-                onClick={() => handleFavorite(character.id)}
+                onClick={() => handleFavs(character.id)}
                 className="btn__fav"
               >
-                {likes.includes(character.id) ? (
-                  <img src="/assets/favorito (1).svg" alt="favorto.svg" />
-                ) : (
-                  <img src="/assets/favorito.svg" alt="favorto.svg" />
-                )}
+                {likes.includes(character.id)
+                  ? (
+                  <img src="/assets/favWhite.svg" alt="likes.svg" />
+                    )
+                  : (
+                  <img src="/assets/fav.svg" alt="likes.svg" />
+                    )}
               </button>
             </div>
           </div>
-        );
-      }) : <CharacterSingle character={characters}/> }
+          );
+        })
+      }
     </>
   );
 };

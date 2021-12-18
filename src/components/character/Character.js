@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable array-callback-return */
 import ListCharacters from "../listCharacteres/ListCharacters";
 import useFetch from "../../hooks/useFetch";
 import "./character.css";
@@ -5,15 +7,15 @@ import Loading from "../loadingSpiner/Loading";
 import useObserver from "../../hooks/useObserver";
 import { useEffect, useRef, useState } from "react";
 
-const URL = `https://rickandmortyapi.com/api/character?page=`;
+const URL = "https://rickandmortyapi.com/api/character?page=";
 
-const Character = ({handleFavs, likes }) => {
+const Character = ({ handleFavs, likes }) => {
   const [page, setPage] = useState(1);
   const refElement = useRef();
-  const { characters, isLoading, setCharacters} = useFetch(`${URL}${page}`);
+  const { characters, isLoading, setCharacters } = useFetch(`${URL}${page}`);
   const { show } = useObserver(refElement);
-  const [charactersResult, setCharactersResult] = useState([])
-  let arrayCaracters = []
+  const [charactersResult, setCharactersResult] = useState([]);
+  const arrayCaracters = [];
 
   useEffect(() => {
     if (show) {
@@ -22,29 +24,21 @@ const Character = ({handleFavs, likes }) => {
   }, [show]);
 
   useEffect(() => {
-    if(characters.results){
-     characters.results.map(item => {
-        arrayCaracters.push(item)
-     })
-      setCharactersResult([...charactersResult, ...arrayCaracters])
+    if (characters.results) {
+      characters.results.map(item => {
+        arrayCaracters.push(item);
+      });
+      setCharactersResult([...charactersResult, ...arrayCaracters]);
     }
-    
-  }, [characters])
-  
- 
+  }, [characters]);
 
   return (
     <>
-       
       <div className="container">
-        {charactersResult.length > 0 ?
-        <ListCharacters likes={likes}  characters={charactersResult} handleFavs={handleFavs}/>
-        : <h2>cargando...</h2>
-        } 
+        {charactersResult.length > 0 &&
+        <ListCharacters likes={likes} characters={charactersResult} handleFavs={handleFavs}/>}
       </div>
-      {
-        show? <Loading />: null
-      }
+      {show ? <Loading /> : null}
       <div id="visor" ref={refElement}></div>
     </>
   );
