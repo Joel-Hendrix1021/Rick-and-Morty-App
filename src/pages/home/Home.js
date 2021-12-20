@@ -2,11 +2,11 @@
 import Character from "../../components/character/Character";
 
 const Home = () => {
-  return (
-    <>
-      <Character />
-    </>
-  );
+    return (
+        <>
+            <Character />
+        </>
+    );
 };
 
 export default Home;

@@ -5,6 +5,23 @@
     grid-gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     min-height: 120vh;
-    justify-items: center;
+    justify-content: center;
+    
 }
 
+.container-loading {
+   min-height: 100vh;
+   
+}
+.container-loading .lds-dual-ring {
+    margin-top: 50px;
+    width: 180px;
+    height: 200px;
+}
+
+.container-loading  .lds-dual-ring::after {
+    width: 150px;
+    height:150px;
+    border: 10px solid #68C611;
+    border-color: #68C611 transparent #68C611 transparent;
+}
