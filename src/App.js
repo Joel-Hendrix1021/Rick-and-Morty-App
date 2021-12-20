@@ -9,7 +9,7 @@ import Favs from "./pages/favorites/Favs";
 function App () {
     return (
         <div className="App">
-            <BrowserRouter>
+            <BrowserRouter basename="/rick-and-morty-app">
                 <Header/>
                 <Switch>
                     <Route path="/profile/:id">
