@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/rick-and-morty-app/static/css/main.1a47f58c.chunk.css",
-    "main.js": "/rick-and-morty-app/static/js/main.1f69ba39.chunk.js",
-    "main.js.map": "/rick-and-morty-app/static/js/main.1f69ba39.chunk.js.map",
-    "runtime-main.js": "/rick-and-morty-app/static/js/runtime-main.343c580e.js",
-    "runtime-main.js.map": "/rick-and-morty-app/static/js/runtime-main.343c580e.js.map",
-    "static/js/2.a022e6bf.chunk.js": "/rick-and-morty-app/static/js/2.a022e6bf.chunk.js",
-    "static/js/2.a022e6bf.chunk.js.map": "/rick-and-morty-app/static/js/2.a022e6bf.chunk.js.map",
-    "static/js/3.2d86644d.chunk.js": "/rick-and-morty-app/static/js/3.2d86644d.chunk.js",
-    "static/js/3.2d86644d.chunk.js.map": "/rick-and-morty-app/static/js/3.2d86644d.chunk.js.map",
-    "index.html": "/rick-and-morty-app/index.html",
-    "static/css/main.1a47f58c.chunk.css.map": "/rick-and-morty-app/static/css/main.1a47f58c.chunk.css.map",
-    "static/js/2.a022e6bf.chunk.js.LICENSE.txt": "/rick-and-morty-app/static/js/2.a022e6bf.chunk.js.LICENSE.txt"
+    "main.css": "/Rick-and-Morty-App/static/css/main.1a47f58c.chunk.css",
+    "main.js": "/Rick-and-Morty-App/static/js/main.68a8b91e.chunk.js",
+    "main.js.map": "/Rick-and-Morty-App/static/js/main.68a8b91e.chunk.js.map",
+    "runtime-main.js": "/Rick-and-Morty-App/static/js/runtime-main.c5793287.js",
+    "runtime-main.js.map": "/Rick-and-Morty-App/static/js/runtime-main.c5793287.js.map",
+    "static/js/2.a022e6bf.chunk.js": "/Rick-and-Morty-App/static/js/2.a022e6bf.chunk.js",
+    "static/js/2.a022e6bf.chunk.js.map": "/Rick-and-Morty-App/static/js/2.a022e6bf.chunk.js.map",
+    "static/js/3.2d86644d.chunk.js": "/Rick-and-Morty-App/static/js/3.2d86644d.chunk.js",
+    "static/js/3.2d86644d.chunk.js.map": "/Rick-and-Morty-App/static/js/3.2d86644d.chunk.js.map",
+    "index.html": "/Rick-and-Morty-App/index.html",
+    "static/css/main.1a47f58c.chunk.css.map": "/Rick-and-Morty-App/static/css/main.1a47f58c.chunk.css.map",
+    "static/js/2.a022e6bf.chunk.js.LICENSE.txt": "/Rick-and-Morty-App/static/js/2.a022e6bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.343c580e.js",
+    "static/js/runtime-main.c5793287.js",
     "static/js/2.a022e6bf.chunk.js",
     "static/css/main.1a47f58c.chunk.css",
-    "static/js/main.1f69ba39.chunk.js"
+    "static/js/main.68a8b91e.chunk.js"
   ]
 }
