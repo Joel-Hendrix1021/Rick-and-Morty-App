@@ -22,10 +22,10 @@ const CardCharacter = ({ character }) => {
                 >
                     {likes.includes(character.id)
                         ? (
-                            <img src="/assets/favWhite.svg" alt="favorto.svg" />
+                            <i className="fas fa-heart"></i>
                         )
                         : (
-                            <img src="/assets/fav.svg" alt="favorto.svg" />
+                            <i className="far fa-heart"></i>
                         )}
                 </button>
             </div>

@@ -8,7 +8,7 @@ const Header = () => {
             <Link to={"/"} className="header__title">Rick and Morty App </Link>
             <FormCharacter />
             <Link className="header__fav" to={"/favs"}>
-        Favorite <img src="/assets/favWhite.svg" alt="favorito" />
+        Favorite  <i className="fas fa-heart"></i>
             </Link>
         </header>
     );

@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import SearchPerson from "./pages/searchPerson/SearchPerson";
 import Profile from "./pages/profile/Profile";
 import Favs from "./pages/favorites/Favs";
+import Error404 from "./pages/404/Error404";
 
 function App () {
     return (
@@ -12,18 +13,14 @@ function App () {
             <BrowserRouter basename="/Rick-and-Morty-App">
                 <Header/>
                 <Switch>
-                    <Route path="/profile/:id">
-                        <Profile />
-                    </Route>
-                    <Route path="/search/:keyword">
-                        <SearchPerson />
-                    </Route>
-                    <Route exact path="/favs">
-                        <Favs />
-                    </Route>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
+                    <Route path="/profile/:id" component={Profile} />
+
+                    <Route path="/search/:keyword" component={SearchPerson}/>
+                    <Route exact path="/favs" component={Favs}/>
+
+                    <Route exact path="/" component={Home}/>
+
+                    <Route exact path="*" component={Error404}/>
                 </Switch>
             </BrowserRouter>
         </div>

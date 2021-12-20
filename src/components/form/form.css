@@ -30,7 +30,7 @@
     cursor: pointer;
 }
 
-.form button  img {
-    width: 50%;
-    margin-top: 0.4rem;
+.form button  i {
+    font-size: 1.7rem;
+    color: white;
 }
